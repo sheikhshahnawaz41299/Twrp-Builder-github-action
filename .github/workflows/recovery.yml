@@ -13,10 +13,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: git@github.com:minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-  DEVICE: m10lte
-  DT_LINK: https://github.com/Andver0/recovery-m10
-  DT_PATH: device/samsung/m10lte
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
+  DEVICE: ginkgo
+  DT_LINK: https://github.com/TeamWin/android_device_xiaomi_ginkgo
+  DT_PATH: device/xiaomi/ginkgo
   TARGET: recoveryimage
   TZ: Europe/London
 
