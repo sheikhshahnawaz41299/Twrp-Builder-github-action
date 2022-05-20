@@ -57,7 +57,7 @@ jobs:
               cd work
               . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
               sudo apt update && sudo apt install tar
-              tar -zcvf rec.tar.gz /home/runner/work/ubuntu/work/out/target/product/m10lte           
+              tar -zcvf rec.tar.gz $(find /home/runner/work/ubuntu/work/out/target/product/m10lte -name recovery.img
              
        - name: Save
          uses: actions/upload-artifact@v3
