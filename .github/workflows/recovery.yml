@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-  DEVICE: ginkgo
-  DT_LINK: https://github.com/TeamWin/android_device_xiaomi_ginkgo
-  DT_PATH: device/xiaomi/ginkgo
+  DEVICE: m10lte
+  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte
+  DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   TZ: Europe/London
 
@@ -55,9 +55,9 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh &&lunch omni_$DEVICE-eng &&export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
               sudo apt update && sudo apt install tar
-              tar -zcvf rec.tar.gz $(find /home/runner/work/ubuntu/work/out/target/product/m10lte -name recovery.img
+              tar -zcvf rec.tar.gz /home/runner/work/ubuntu/work/out/target/product/m10lte/recovery.img
              
        - name: Save
          uses: actions/upload-artifact@v3
