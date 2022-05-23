@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-  DEVICE: m10lte
-  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte
-  DT_PATH: device/samsung/m10lte
+  DEVICE: a10
+  DT_LINK: https://github.com/A105xx-Dev/android_device_samsung_a10-twrp
+  DT_PATH: device/samsung/a10
   TARGET: recoveryimage
   TZ: Europe/London
 
