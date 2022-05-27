@@ -15,7 +15,7 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
   DEVICE: Infinix-X688B
-  DT_LINK: https://github.com/twrpdtgen/android_device_infinix_Infinix-X688B
+  DT_LINK: https://github.com/AndVer0/android_recovery_infinixhot10play
   DT_PATH: device/infinix/Infinix-X688B
   TARGET: recoveryimage
   TZ: Europe/London
