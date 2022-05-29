@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0-deprecated
-  DEVICE: m10lte
+  DEVICE: r9q
   DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte
-  DT_PATH: device/samsung/m10lte
+  DT_PATH: device/samsung/r9q
   TARGET: recoveryimage
   TZ: Europe/London
 
@@ -61,5 +61,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/m10lte/recovery.img
+            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/r9q/recovery.img
             retention-days: 5
