@@ -48,14 +48,14 @@ jobs:
              mkdir work
              cd work
              repo init -u $MANIFEST --depth=1
-             repo sync -c -j490 --force-sync --no-clone-bundle --no-tags
+             repo sync -c -j1000 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
              
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j678
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j1000
               sudo apt update && sudo apt install tar
               tar -zcvf rec.tar.gz $(find $PWD -name recovery.img)
               ls
