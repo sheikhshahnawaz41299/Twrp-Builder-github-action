@@ -1,33 +1,16 @@
-# Get a Ubuntu SSH Virtual Machine for free ;) #
+this script for building twrp using gh action
 
-## What this is ##
----------------------------------------------------------------------
-This script helps you get a Virtual Ubuntu server using SSH !! 
+what you need:
 
-This works with GitHub actions, thank GitHub not me : )
+* twrp recovery tree for your device
+* twrp manifest for your device (check your android version)
+* your device name
 
-### How to use ###
+now change details 
+DT_LINK
+MANIFEST
 
-Here are some useful notes to using this tool brewed with black magic xD !
+if your device doesnt have recovery partition change recoveryimage to bootimage
 
-1. Fork the repo .
+finally in Save change m10lte to your device name
 
-2. Go to actions tab, enable workflows.
-
-3. Go to Actions tab again, Click and run workflow manually
-
-4. After few mins the script will spam *SSH* in Terminal , Enjoy !
-
-
-#### Credits and Thanks to People Who Helped me ####
-
-Script Made by [***Aryan Sinha***](https://github.com/techyminati)
-
-Thanks Github For Running this on Github Actions
-
-
-
-Enjoy With Your SSH Server for free.
-
-Note: This is just for testing and deployment of applications, I do not encourage misuse of Github Actions ! Thanks
-(c) Area69Lab
