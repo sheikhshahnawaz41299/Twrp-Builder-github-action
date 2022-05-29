@@ -56,13 +56,13 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j1000
-              sudo apt update && sudo apt install tar
-              tar -zcvf rec.tar.gz $(find $PWD -name recovery.img)
+              sudo apt update && sudo apt install zip
+              sudo zip -m recovery.zip $(find $PWD -name recovery.img)
               ls
              
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: my-artifact
-            path: /home/runner/work/ubuntu/ubuntu/work/rec.tar.gz
+            path: /home/runner/work/ubuntu/ubuntu/work/recovery.zip
             retention-days: 5
