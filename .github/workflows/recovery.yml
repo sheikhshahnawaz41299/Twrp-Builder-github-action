@@ -15,7 +15,7 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
   DEVICE: Infinix-X688B
-  DT_LINK: https://github.com/AndVer0/android_recovery_infinixhot10play
+  DT_LINK: https://github.com/twrpdtgen/android_device_infinix_Infinix-X688B
   DT_PATH: device/infinix/Infinix-X688B
   TARGET: recoveryimage
   TZ: Europe/London
@@ -55,7 +55,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch twrp_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j678
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j678
               sudo apt update && sudo apt install tar
               tar -zcvf rec.tar.gz $(find $PWD -name recovery.img)
               ls
