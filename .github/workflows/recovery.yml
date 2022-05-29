@@ -13,7 +13,7 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0-deprecated
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
   DEVICE: r9q
   DT_LINK: https://github.com/klabit87/android_device_samsung_r9q
   DT_PATH: device/samsung/r9q
