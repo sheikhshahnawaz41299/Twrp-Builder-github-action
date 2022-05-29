@@ -9,6 +9,10 @@ what you need:
 now change details 
 DT_LINK
 MANIFEST
+Device Name ...
+and Path device/<OEM>/<Device Name>
+
+OEM: Manufacturer e.g: samsung oneplus ...
 
 if your device doesnt have recovery partition change recoveryimage to bootimage
 
