@@ -61,5 +61,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/$DEVICE/recovery.img
+            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/m10lte/recovery.img
             retention-days: 5
