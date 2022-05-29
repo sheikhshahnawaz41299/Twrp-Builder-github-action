@@ -15,7 +15,7 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-10.0-deprecated
   DEVICE: r9q
-  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte
+  DT_LINK: https://github.com/klabit87/android_device_samsung_r9q
   DT_PATH: device/samsung/r9q
   TARGET: recoveryimage
   TZ: Europe/London
