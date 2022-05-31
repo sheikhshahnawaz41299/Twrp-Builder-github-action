@@ -14,9 +14,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
-  DEVICE: m20lte
-  DT_LINK: https://github.com/SiddhantNaik17/TWRP-android_device_samsung_m20lte
-  DT_PATH: device/samsung/m20lte
+  DEVICE: msm8953_64
+  DT_LINK: https://github.com/twrpdtgen/android_device_vivo_msm8953_64
+  DT_PATH: device/vivo/msm8953_64
   TARGET: recoveryimage
   TZ: Europe/London
 
@@ -61,5 +61,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/m20lte/recovery.img
+            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/vivo/recovery.img
             retention-days: 5
