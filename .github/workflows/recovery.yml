@@ -1,4 +1,4 @@
-name: Building recovery
+name: Building Twrp recovery Android 4-10
 
 on:
 #  release:
@@ -10,6 +10,7 @@ on:
 #      - '.config'
 #  schedule:
 #    - cron: 0 8 * * 5
+#  tested on android 8.1
   workflow_dispatch:
 
 env:
