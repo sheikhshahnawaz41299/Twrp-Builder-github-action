@@ -16,7 +16,7 @@ on:
 env:
   MANIFEST: //github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
   DEVICE: m10lte
-  DT_LINK: https://github.com/shashank1439/recovery_device_xiaomi_mido
+  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   TZ: Europe/London
