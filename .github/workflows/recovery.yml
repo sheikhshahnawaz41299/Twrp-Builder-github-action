@@ -14,10 +14,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
-  DEVICE: a52xq
-  DT_LINK: https://github.com/twrpdtgen/android_device_samsung_a52xq
-  DT_PATH: device/samsung/a52xq
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-6.0
+  DEVICE: mido
+  DT_LINK: https://github.com/shashank1439/recovery_device_xiaomi_mido
+  DT_PATH: device/xiaomi/mido
   TARGET: recoveryimage
   TZ: Europe/London
 
@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/a52xq/recovery.img
+            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/mido/recovery.img
             retention-days: 5
