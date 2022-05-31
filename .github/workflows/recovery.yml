@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
-  DEVICE: msm8953_64
-  DT_LINK: https://github.com/twrpdtgen/android_device_vivo_msm8953_64
-  DT_PATH: device/vivo/msm8953_64
+  DEVICE: a52xq
+  DT_LINK: https://github.com/twrpdtgen/android_device_samsung_a52xq
+  DT_PATH: device/samsung/a52xq
   TARGET: recoveryimage
   TZ: Europe/London
 
@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/msm8953_64/recovery.img
+            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/a52xq/recovery.img
             retention-days: 5
