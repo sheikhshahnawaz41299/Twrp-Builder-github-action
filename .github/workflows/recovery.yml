@@ -18,7 +18,7 @@ env:
   DEVICE: ATOM
   DT_LINK: https://github.com/twrpdtgen/android_device_symphony_ATOM
   DT_PATH: device/symphony/ATOM
-  TARGET: bootimage
+  TARGET: recoveryimage
   TZ: Europe/London
 
 jobs:
@@ -49,18 +49,18 @@ jobs:
              mkdir work
              cd work
              repo init -u $MANIFEST --depth=1
-             repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
+             repo sync -c -j7090 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
              
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j780
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j7809
               
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/ATOM/boot.img
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/ATOM/recovery.img
             retention-days: 5
