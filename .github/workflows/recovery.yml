@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/ATOM/recovery.img
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/ATOM/recovery.img
             retention-days: 5
