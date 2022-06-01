@@ -18,7 +18,7 @@ env:
   DEVICE: ATOM
   DT_LINK: https://github.com/twrpdtgen/android_device_symphony_ATOM
   DT_PATH: device/symphony/ATOM
-  TARGET: recoveryimage
+  TARGET: bootimage
   TZ: Europe/London
 
 jobs:
