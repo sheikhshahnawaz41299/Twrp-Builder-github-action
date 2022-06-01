@@ -18,7 +18,7 @@ env:
   DEVICE: ATOM
   DT_LINK: https://github.com/twrpdtgen/android_device_symphony_ATOM
   DT_PATH: device/symphony/ATOM
-  TARGET: recoveryimage
+  TARGET: bootimage
   TZ: Europe/London
 
 jobs:
@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/ATOM/recovery.img
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/ATOM/boot.img
             retention-days: 5
