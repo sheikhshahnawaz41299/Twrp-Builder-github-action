@@ -16,7 +16,7 @@ on:
 env:
   MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
   DEVICE: m10lte
-  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte
+  DT_LINK: https://github.com/twrpdtgen/android_device_infinix_Infinix-X688B
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   TZ: Europe/London
