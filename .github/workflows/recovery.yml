@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/m10lte/recovery.img
+            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/Infinix-X688B/recovery.img
             retention-days: 5
