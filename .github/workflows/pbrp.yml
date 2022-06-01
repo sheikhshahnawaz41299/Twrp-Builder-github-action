@@ -57,10 +57,11 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j780
-              
+              sudo apt install zip
+              zip -r recovery.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/*.zip
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/PBRP-m10lte-3.1.0-20220601-1051-UNOFFICIAL.zip
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/recovery.zip
             retention-days: 5
