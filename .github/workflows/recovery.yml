@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/ATOM/recovery.img
+            path: /home/runner/work/ubuntu/ubuntu/work/out/target/product/ATOM/boot.img
             retention-days: 5
