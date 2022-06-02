@@ -14,11 +14,11 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
-  DEVICE: m10lte
-  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte
-  DT_PATH: device/samsung/m10lte
-  TARGET: recoveryimage
+  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-10.0
+  DEVICE: caprip
+  DT_LINK: https://github.com/AndVer0/android_recovery_tree_moto_g30
+  DT_PATH: device/motorola/caprip
+  TARGET: bootimage
   TZ: Europe/London
 
 jobs:
@@ -58,7 +58,7 @@ jobs:
               cd work
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j780
               sudo apt install zip
-              zip -r recovery.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/*.zip
+              zip -r recovery.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/*.zip
        - name: Save
          uses: actions/upload-artifact@v3
          with:
