@@ -14,9 +14,9 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-10.0
+  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
   DEVICE: msm8953_64
-  DT_LINK: https://github.com/AndVer0/android_reecovery_vivo_1224
+  DT_LINK: https://github.com/AndVer0/android_recovery_vivo_1727
   DT_PATH: device/vivo/msm8953_64
   TARGET: recoveryimage
   TZ: Europe/London
