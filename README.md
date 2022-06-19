@@ -1,6 +1,9 @@
 -this script for who want to build twrp/shrp/pbrp and they dont have a pc with good performance 
+
 -So to run it you need to froke or reclone to your repo
+
 -you need recovery tree for your custom recovery (please if you got any problem check your recovery tree)
+
 -finally change details on .github/workflows/"custom recovery".yml
 
 what you need to change:
