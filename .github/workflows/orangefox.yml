@@ -1,4 +1,4 @@
-name: Building orangefox recovery
+name: Building shrp recovery
 
 on:
 #  release:
