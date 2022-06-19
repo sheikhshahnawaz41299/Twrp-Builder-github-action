@@ -61,5 +61,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/recovery.img
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/*
             retention-days: 5
