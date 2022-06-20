@@ -50,7 +50,7 @@ jobs:
              cd work
              repo init -u $MANIFEST --depth=1
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
-             git clone $DT_LINK $DT_PATH
+             git clone $DT_LINK $DT_PATH --depth=1
              
              
        - name: Build
