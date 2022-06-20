@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
-  DEVICE: rmx2117
-  DT_LINK: https://github.com/AndVer0/android_device_realme_rmx2117
-  DT_PATH: device/realme/rmx2117
+  DEVICE: java
+  DT_LINK: https://github.com/twrpdtgen/android_device_motorola_java
+  DT_PATH: device/motorola/java
   TARGET: recoveryimage
   TZ: Europe/London
 
@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.img
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/rmx2117/recovery.img
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/java/recovery.img
             retention-days: 5
