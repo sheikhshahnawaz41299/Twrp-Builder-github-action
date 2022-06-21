@@ -38,8 +38,7 @@ jobs:
              message: |
                     Android: $ANDROID
                     Device: $DEVICE
-                    Recovery tree: $DT_LINK
-                    device type: $REC          
+                    Recovery tree: $DT_LINK                       
        - name: Initializing environment
          run: |
             sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
