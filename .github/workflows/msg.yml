@@ -1,15 +1,16 @@
-name: telegram message
-on: [push]
+name: Send notifications to telegram
+on:
+  push
 jobs:
-
   build:
-    name: Build
+    name: A job to launch telegram notifications
     runs-on: ubuntu-latest
     steps:
-      - name: Telegram Message Notify
-        uses: appleboy/telegram-action@v0.1.1
-        with:
-          to: "@s0fttsp"
-          token: "5460835953:AAEBQpy0m4iT9WBFEkk1loKl2SBB7yyTpTM"
-          message: |
-            I will build now
+    - name: Send notifications
+      id: send_notifications
+      uses: danilat/externalized-telegram-notifications-action@master
+      with:
+        to: "@s0fttsp"
+        token: "5460835953:AAEBQpy0m4iT9WBFEkk1loKl2SBB7yyTpTM"
+        content-url: "<i>hello</i>"
+        parse_mode: html
