@@ -12,5 +12,5 @@ jobs:
       with:
         to: "@s0fttsp"
         token: "5460835953:AAEBQpy0m4iT9WBFEkk1loKl2SBB7yyTpTM"
-        content-url: "<i>hello</i>"
-        parse_mode: html
+        content-url: "*hello*"
+        parse_mode: Markdown
