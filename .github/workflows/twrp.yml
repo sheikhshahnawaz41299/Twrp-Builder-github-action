@@ -14,12 +14,12 @@ on:
   workflow_dispatch:
 
 env:
-  ANDROID: 11
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git
-  DEVICE: java
-  DT_LINK: https://github.com/AndVer0/android_device_java_shrp
-  DT_PATH: device/motorola/java
-  TARGET: bootimage
+  ANDROID: 10
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  DEVICE: m10lte
+  DT_LINK: https://github.com/twrpdtgen/android_device_samsung_m10lte
+  DT_PATH: device/samsung/m10lte
+  TARGET: recovery
   TZ: Europe/London
 
 jobs:
@@ -29,16 +29,7 @@ jobs:
     steps:
        - name: Checkout
          uses: actions/checkout@master
-       
-       - name: send telegram message on push
-         uses: appleboy/telegram-action@master
-         with:
-             to: ${{ secrets.TELEGRAM_TO }}
-             token: ${{ secrets.TELEGRAM_TOKEN }}           
-             message: |
-                    Android: $ANDROID
-                    Device: $DEVICE
-                    Recovery tree: $DT_LINK                       
+                               
        - name: Initializing environment
          run: |
             sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
@@ -65,11 +56,14 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch twrp_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET
-              
-       - name: Save
-         uses: actions/upload-artifact@v3
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGETimage
+       - name: send telegram message on push
+         uses: appleboy/telegram-action@master
          with:
-            name: recovery.img
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/java/recovery.img
-            retention-days: 5
+             to: ${{ secrets.TELEGRAM_TO }}
+             token: ${{ secrets.TELEGRAM_TOKEN }}           
+             message: |
+                    Android: $ANDROID
+                    Device: $DEVICE
+                    Recovery tree: $DT_LINK     
+       
