@@ -20,7 +20,6 @@ env:
   DT_LINK: https://github.com/AndVer0/android_device_java_shrp
   DT_PATH: device/motorola/java
   TARGET: bootimage
-  REC: N/A
   TZ: Europe/London
 
 jobs:
@@ -31,14 +30,11 @@ jobs:
        - name: Checkout
          uses: actions/checkout@master
        
-       - if [ $REC == recoveryimage]; then ${REC: A_Only};fi;
-       - if [ $REC == bootimage]; then ${REC: A/B};fi;
-      
        - name: send telegram message on push
          uses: appleboy/telegram-action@master
          with:
              to: ${{ secrets.TELEGRAM_TO }}
-             token: ${{ secrets.TELEGRAM_TOKEN }}
+             token: ${{ secrets.TELEGRAM_TOKEN }}           
              message: |
                     Android: $ANDROID
                     Device: $DEVICE
