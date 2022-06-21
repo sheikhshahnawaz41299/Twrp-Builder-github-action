@@ -9,7 +9,7 @@ jobs:
       - name: Telegram Message Notify
         uses: appleboy/telegram-action@v0.1.1
         with:
-          to: @s0fttsp
+          to: "@s0fttsp"
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             I will build now
