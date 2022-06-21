@@ -10,6 +10,6 @@ jobs:
         uses: appleboy/telegram-action@v0.1.1
         with:
           to: "@s0fttsp"
-          token: ${{ secrets.TELEGRAM_TOKEN }}
+          token: "5460835953:AAEBQpy0m4iT9WBFEkk1loKl2SBB7yyTpTM"
           message: |
             I will build now
