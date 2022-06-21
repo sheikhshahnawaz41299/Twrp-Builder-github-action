@@ -1,6 +1,6 @@
 name: Building Twrp recovery Android 4-10
 
-on:
+on: [push]
 #  release:
 #    types: [published]
 #  push:
