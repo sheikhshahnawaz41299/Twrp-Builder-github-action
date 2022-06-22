@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  ANDROID: "10.0-deprecated"
+  ANDROID: 10.0-deprecated
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
   DEVICE: m10lte
   DT_LINK: https://github.com/twrpdtgen/android_device_samsung_m10lte
@@ -56,7 +56,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGETimage
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGETimage -j300
        - name: send telegram message on push
          uses: appleboy/telegram-action@master
          with:
