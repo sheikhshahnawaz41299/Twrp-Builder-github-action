@@ -14,8 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  ANDROID: "8.1"
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
   DEVICE: m10lte
   DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_twrp
   DT_PATH: device/samsung/m10lte
@@ -48,7 +47,7 @@ jobs:
          run: |
              mkdir work
              cd work
-             repo init -u $MANIFEST -b twrp-$ANDROID --depth=1
+             repo init -u $MANIFEST --depth=1
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
