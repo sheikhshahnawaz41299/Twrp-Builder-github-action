@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  ANDROID: 10
+  ANDROID: "10"
   MANIFEST: https://github.com/SHRP/manifest.git
   DEVICE: m10lte
   DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_shrp
