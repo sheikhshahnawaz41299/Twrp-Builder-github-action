@@ -14,12 +14,11 @@ on:
   workflow_dispatch:
 
 env:
-  ANDROID: "10"
-  MANIFEST: https://github.com/SHRP/manifest.git
+  MANIFEST: https://github.com/SHRP/manifest.git -b v3_10.0
   DEVICE: m10lte
   DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_shrp -b twrp
   DT_PATH: device/samsung/m10lte
-  TYPE: recovery
+  TYPE: recoveryimage
   TZ: Europe/London
 
 jobs:
@@ -49,26 +48,16 @@ jobs:
          run: |
              mkdir work
              cd work
-             repo init -u $MANIFEST -b v3_$ANDROID.0 --depth=1
-             repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
+             repo init -u $MANIFEST --depth=1
+             repo sync -c -j$(nproc -all) --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK $DT_PATH --depth=1
              
              
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TYPEimage -j780
-       - name: send telegram message on push
-         uses: appleboy/telegram-action@master
-         with:
-             to: ${{ secrets.TELEGRAM_TO }}
-             token: ${{ secrets.TELEGRAM_TOKEN }}
-             document: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/java/SHRP*
-             message: |
-                    Android: $ANDROID
-                    Device: $DEVICE
-                    Recovery tree: $DT_LINK     
-             
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TYPE -j$(nproc -all)
+    
        - name: Save
          uses: actions/upload-artifact@v3
          with:
