@@ -17,7 +17,7 @@ env:
   ANDROID: "10"
   MANIFEST: https://github.com/SHRP/manifest.git
   DEVICE: m10lte
-  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_shrp
+  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_shrp -b twrp
   DT_PATH: device/samsung/m10lte
   TYPE: recovery
   TZ: Europe/London
