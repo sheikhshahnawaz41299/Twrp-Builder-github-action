@@ -14,10 +14,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/SHRP/manifest.git -b v3_11.0
-  DEVICE: ETW101GT_EEA
-  DT_LINK: https://github.com/AndVer0/shrp_android_device_microtech
-  DT_PATH: device/microtech/ETW101GT_EEA
+  MANIFEST: https://github.com/SHRP/manifest.git -b v3_10.0
+  DEVICE: m10lte
+  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_shrp
+  DT_PATH: device/samsung/m10lte
   TYPE: recoveryimage
   TZ: Europe/London
 
@@ -62,5 +62,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/ETW101GT_EEA/
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/
             retention-days: 5
