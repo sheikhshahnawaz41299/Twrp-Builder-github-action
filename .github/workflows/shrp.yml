@@ -57,18 +57,10 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TYPE -j110
-
-       - name: send Recovery
-         uses: appleboy/telegram-action@master
-         with:
-             to: ${{ secrets.TELEGRAM_TO }}
-             token: ${{ secrets.TELEGRAM_TOKEN }}
-             document: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/*_stable-*
-             message: |
-                    Android: $ANDROID
-                    Device: $DEVICE
-                    Recovery tree: $DT_LINK     
-             
+              PATHFILE=$(readlink -f *_stable- home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte)
+              mapfile -t <<< "$PATHFILE"
+              SHRP=$(printf "%s\n" "${MAPFILE[0]}")
+     
        - name: Save
          uses: actions/upload-artifact@v3
          with:
