@@ -56,15 +56,8 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TYPE -j110             
+              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TYPE -j110
+              git init && git add /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/*.zip && git commit -m "latest fw" && git branch -M main && git remote add origin https://AndVer0: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@github.com/AndVer0/C.git && git push -u origin main
               sudo apt update && sudo apt install gzip && gzip -c /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/*_stable-Unofficial_* > shrp.gz
              
-    - name: Upload to Release
-      uses: softprops/action-gh-release@v1
-      with:
-        files: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/shrp.gz
-        name: Shrp for $DEVICE
-        tag_name: hy
-        body: Recovery for $DEVICE
-      env:
-        GITHUB_TOKEN: ${{ secrets.GIT_TOK }}
+    
