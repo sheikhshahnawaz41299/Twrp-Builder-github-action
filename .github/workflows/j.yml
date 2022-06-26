@@ -33,7 +33,7 @@ jobs:
        - name: Initializing environment
          run: |
               sudo apt update -y && sudo apt install git jq -y && sudo git clone https://github.com/centminmod/telegram-send
-              sudo cd telegram-send && sudo touch tgtoken.ini 
-              sudo echo "tgtoken='${{ secrets.TELEGRAM_TOKEN }}'" > tgtoken.ini && sudo echo "tgchatid='${{ secrets.TELEGRAM_TO }}'" >> tgtoken.ini && sudo echo "tgapi='https://api.telegram.org/bot${{ secrets.GITHUB_TOKEN }}'" >> tgtoken.ini
-              sudo touch g.mk           
-              sudo bash tgsend.sh sendf g.mk   
+              sudo touch telegram-send/tgtoken.ini 
+              sudo echo "tgtoken='${{ secrets.TELEGRAM_TOKEN }}'" > telegram-send/tgtoken.ini && sudo echo "tgchatid='${{ secrets.TELEGRAM_TO }}'" >> telegram-send/tgtoken.ini && sudo echo "tgapi='https://api.telegram.org/bot${{ secrets.GITHUB_TOKEN }}'" >> telegram-send/tgtoken.ini
+              sudo touch telegram-send/g.mk           
+              bash telegram-send/tgsend.sh sendf telegram-send/g.mk   
