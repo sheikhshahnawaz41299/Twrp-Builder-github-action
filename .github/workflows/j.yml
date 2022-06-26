@@ -1,0 +1,38 @@
+name: Building Pbrp recovery1
+
+on:
+#  release:
+#    types: [published]
+#  push:
+#    branches:
+#      - master
+#    paths:
+#      - '.config'
+#  schedule:
+#    - cron: 0 8 * * 5
+#  tested on android 8.1
+  workflow_dispatch:
+
+env:
+  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
+  DEVICE: msm8953_64
+  DT_LINK: https://github.com/AndVer0/android_recovery_vivo_1727
+  DT_PATH: device/vivo/msm8953_64
+  TARGET: recoveryimage
+  TZ: Europe/London
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@master
+         
+
+       - name: Initializing environment
+         run: |
+              sudo apt update -y && sudo apt install git jq -y && git clone https://github.com/centminmod/telegram-send
+              cd telegram-send && sudo touch tgtoken.ini 
+              echo "tgtoken=''" > tgtoken.ini && echo "tgchatid=''" >> tgtoken.ini && echo "tgapi=''" >> tgtoken.ini
+              
