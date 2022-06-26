@@ -34,5 +34,5 @@ jobs:
          run: |
               sudo apt update -y && sudo apt install git jq -y && git clone https://github.com/centminmod/telegram-send
               cd telegram-send && sudo touch tgtoken.ini 
-              echo "tgtoken=''" > tgtoken.ini && echo "tgchatid=''" >> tgtoken.ini && echo "tgapi=''" >> tgtoken.ini
+              echo "tgtoken='${{ secrets.TELEGRAM_TOKEN }}'" > tgtoken.ini && echo "tgchatid='${{ secrets.TELEGRAM_TO }}'" >> tgtoken.ini && echo "tgapi='https://api.telegram.org/bot${{ secrets.GITHUB_TOKEN }}'" >> tgtoken.ini
               
