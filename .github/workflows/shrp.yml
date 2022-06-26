@@ -60,11 +60,11 @@ jobs:
               PATHFILE=$(readlink -f *_stable-* home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte)
               mapfile -t <<< "$PATHFILE"
               SHRP=$(printf "%s\n" "${MAPFILE[0]}")
-              sudo apt install gzip && gzip -c $SHRP > shrp.gzip
+              sudo apt update && sudo apt install gzip && gzip -c $SHRP > shrp.gz
      
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: recovery
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/shrp.gzip
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/shrp.gz
             retention-days: 5
