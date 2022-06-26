@@ -64,7 +64,7 @@ jobs:
       with:
         files: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/shrp.gz
         name: Shrp for $DEVICE
-        tag_name: ${{ github.run_id }}
+        tag_name: hy
         body: Recovery for $DEVICE
       env:
         GITHUB_TOKEN: ${{ secrets.GIT_TOK }}
