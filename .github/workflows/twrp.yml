@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-9.0
-  DEVICE: m10lte
+  DEVICE: ETW101GT_EEA
   DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_twrp
-  DT_PATH: device/samsung/m10lte
+  DT_PATH: device/microtech/ETW101GT_EEA
   TARGET: recovery
   TZ: Europe/London
 
@@ -49,8 +49,7 @@ jobs:
              cd work
              repo init -u $MANIFEST --depth=1
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
-             git clone $DT_LINK --depth=1 --single-branch $DT_PATH
-             
+             git clone $DT_LINK --depth=1 --single-branch $DT_PATH           
              
        - name: Build
          run: |
@@ -61,5 +60,5 @@ jobs:
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/recovery.img
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/ETW101GT_EEA/recovery.img
             retention-days: 5
