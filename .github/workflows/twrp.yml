@@ -56,14 +56,10 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGETimage -j300
-       - name: send telegram message on push
-         uses: appleboy/telegram-action@master
+
+       - name: Save
+         uses: actions/upload-artifact@v3
          with:
-             to: ${{ secrets.TELEGRAM_TO }}
-             token: ${{ secrets.TELEGRAM_TOKEN }}
-             document: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/java/$TARGET.img
-             message: |
-                    Android: $ANDROID
-                    Device: $DEVICE
-                    Recovery tree: $DT_LINK     
-             
+            name: recovery.zip
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/m10lte/recovery.img
+            retention-days: 5
