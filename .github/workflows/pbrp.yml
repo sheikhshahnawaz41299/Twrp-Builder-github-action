@@ -14,10 +14,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
-  DEVICE: msm8953_64
-  DT_LINK: https://github.com/AndVer0/android_recovery_vivo_1727
-  DT_PATH: device/vivo/msm8953_64
+  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-10
+  DEVICE: m10lte
+  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_pbrp
+  DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
   TZ: Europe/London
 
@@ -57,10 +57,11 @@ jobs:
               cd work
               . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j780
               sudo apt install zip
-              zip -r recovery.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/*.zip
+              zip pbrp.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/*.zip
+
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/recovery.zip
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/pbrp.zip
             retention-days: 5
