@@ -1,34 +1,21 @@
-name: Building Twrp recovery Android 4-10
-
-on:
-#  release:
-#    types: [published]
-#  push:
-#    branches:
-#      - master
-#    paths:
-#      - '.config'
-#  schedule:
-#    - cron: 0 8 * * 5
-#  tested on android 8.1
-  workflow_dispatch:
-
-env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-  DEVICE: gts7l
-  DT_LINK: https://github.com/ianmacd/twrp_gts7l
-  DT_PATH: device/samsung/gts7l
-  TARGET: recovery
-  TZ: Europe/London
+name: Show Me the S3cr3tz
+on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-18.04
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
 
     steps:
-       - name: Checkout
-         uses: actions/checkout@master
-                               
-       - name: Initializing environment
-         run: |
-             echo ${{ secrets.TELEGRAM_TOKEN }}
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        DEBUG_PASSWORD: ${{ secrets.DEBUG_PASSWORD }}
+        DEBUG_SECRET_KEY: ${{ secrets.DEBUG_SECRET_KEY }}
+      run: |
+        echo $DEBUG_PASSWORD >> secrets.txt
+        echo $DEBUG_SECRET_KEY >> secrets.txt
+    - name: Run tmate
+      uses: mxschmitt/action-tmate@v2
