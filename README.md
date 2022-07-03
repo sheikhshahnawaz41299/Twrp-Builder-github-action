@@ -1,4 +1,4 @@
--this script for who want to build twrp/shrp/pbrp and they dont have a pc with good performance 
+-this script for who want to build twrp/shrp/pbrp and he dont have a pc with good performance 
 
 -So to run it you need to froke or reclone to your repo
 
