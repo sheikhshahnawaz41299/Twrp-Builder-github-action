@@ -19,7 +19,7 @@ env:
   DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_pbrp
   DT_PATH: device/samsung/m10lte
   TARGET: recoveryimage
-  omni/twrp: omni
+  OT: omni
   TZ: Europe/London
 
 jobs:
@@ -56,7 +56,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch $omni/twrp_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j110
+              . build/envsetup.sh && lunch $OT_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j110
               sudo apt install zip
               zip pbrp.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/*.zip
 
