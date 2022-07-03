@@ -14,7 +14,7 @@ Steps:
     - if you dont have recoveryimage: use bootimage
     - if you have A/B and recovery partition: use recoveryimage
     - if you dont have recovery partition and you have A/B: use bootimage
- * f) omni/twrp: if your device tree have (i.e: omni_sweet.mk) use: omni
+ * f) ot: if your device tree have (i.e: omni_sweet.mk) use: omni
                if your device tree have (i.e: twrp_sweet.mk) use: twrp
 
 3) for device tree: 
