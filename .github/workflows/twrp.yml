@@ -18,7 +18,8 @@ env:
   DEVICE: gts7l
   DT_LINK: https://github.com/ianmacd/twrp_gts7l
   DT_PATH: device/samsung/gts7l
-  TARGET: recovery
+  TARGET: recoveryimage
+  omni/twrp: omni
   TZ: Europe/London
 
 jobs:
@@ -54,7 +55,7 @@ jobs:
        - name: Build
          run: |
               cd work
-              . build/envsetup.sh && lunch omni_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGETimage -j300
+              . build/envsetup.sh && lunch $omni/twrp_$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j100
               sudo apt install zip && zip twrp.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/recovery.img
        - name: Save
          uses: actions/upload-artifact@v3
