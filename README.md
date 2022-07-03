@@ -1,23 +1,33 @@
--this script for who want to build twrp/shrp/pbrp and he dont have a pc with good performance 
+Finally i made a script to build (twrp/shrp/pbrp) using github actions
 
--So to run it you need to froke or reclone to your repo
+Steps:
 
--you need recovery tree for your custom recovery (please if you got any problem check your recovery tree)
+1) reclone the repo
 
--finally change details on .github/workflows/"custom recovery".yml
+2) change data on .github/workflows/(recovery).yml
+ a) Manifest: use your manifest
+ b) device: codename i.e: sweet
+ c) dt_link: device tree link
+ d) dt_path: i.e: device/xiaomi/sweet
+ e) target: 
+    - if you have recovery partition: use recoveryimage
+    - if you dont have recoveryimage: use bootimage
+    - if you have A/B and recovery partition: use recoveryimage
+    - if you dont have recovery partition and you have A/B: use bootimage
+ f) omni/twrp: if your device tree have (i.e: omni_sweet.mk) use: omni
+               if your device tree have (i.e: twrp_sweet.mk) use: twrp
 
-what you need to change:
+3) for device tree: 
+   a) twrp: use Twrpdtgen
+   b) pbrp: use Twrpdtgen + go to boardConfig.mk and remove # on Board size ...
+   c) shrp: check shrp website to add needed flags
 
-*Manifest: depend of your android version, please if you use custom rom use latest android
+4) if you get an error check your device tree first
+   or : use #errortemplate for Twrp Building support group on telegram (twrp only).
+   for other: check shrp/pbrp community
 
-*Device: your device codename
-
-*DT_Link: recovery tree
-
-*DT_target: device/"manufacturer"/"codename"
-
-*Target: if you have recovery partition use recoveryimage if you have A/B slot or no recovery partition use bootimage
-
-*Path: on last line change "codename" to your codename
+5) if your recovery partition smaller than builded recovery. 
+   a) build a small kernel
+   b) compress your kernel
 
 thanks
