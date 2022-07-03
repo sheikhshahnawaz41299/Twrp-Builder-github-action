@@ -5,16 +5,16 @@ Steps:
 1) reclone the repo
 
 2) change data on .github/workflows/(recovery).yml
- a) Manifest: use your manifest
- b) device: codename i.e: sweet
- c) dt_link: device tree link
- d) dt_path: i.e: device/xiaomi/sweet
- e) target: 
+ * a) Manifest: use your manifest
+ * b) device: codename i.e: sweet
+ * c) dt_link: device tree link
+ * d) dt_path: i.e: device/xiaomi/sweet
+ * e) target: 
     - if you have recovery partition: use recoveryimage
     - if you dont have recoveryimage: use bootimage
     - if you have A/B and recovery partition: use recoveryimage
     - if you dont have recovery partition and you have A/B: use bootimage
- f) omni/twrp: if your device tree have (i.e: omni_sweet.mk) use: omni
+ * f) omni/twrp: if your device tree have (i.e: omni_sweet.mk) use: omni
                if your device tree have (i.e: twrp_sweet.mk) use: twrp
 
 3) for device tree: 
