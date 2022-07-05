@@ -51,7 +51,7 @@ jobs:
              cd work
              repo init -u $MANIFEST --depth=1
              repo sync -c -j700 --force-sync --no-clone-bundle --no-tags
-             git clone $DT_LINK  -$DT_BRANCH --depth=1 --single-branch $DT_PATH           
+             git clone $DT_LINK -b $DT_BRANCH --depth=1 --single-branch $DT_PATH           
              
        - name: Build
          run: |
