@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
+  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-9.0
   DEVICE: a6000
   DT_LINK: https://github.com/sheikhsheikh41299/android_device_lenovo_a6000-pbrp.git
   DT_PATH: device/lenovo/a6000
