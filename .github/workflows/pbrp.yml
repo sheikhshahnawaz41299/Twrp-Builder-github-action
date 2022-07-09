@@ -14,10 +14,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-10.0
-  DEVICE: m10lte
-  DT_LINK: https://github.com/AndVer0/android_device_samsung_m10lte_pbrp
-  DT_PATH: device/samsung/m10lte
+  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
+  DEVICE: pd1510
+  DT_LINK: https://github.com/sheikhsheikh41299/android_device_vivo_pd1510-twrp.git
+  DT_PATH: device/vivo/pd1510
   TARGET: recoveryimage
   OT: omni_
   TZ: Europe/London
