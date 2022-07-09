@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
-  DEVICE: pd1510
-  DT_LINK: https://github.com/sheikhsheikh41299/android_device_vivo_pd1510-twrp.git
-  DT_PATH: device/vivo/pd1510
+  DEVICE: a6000
+  DT_LINK: https://github.com/sheikhsheikh41299/android_device_lenovo_a6000-pbrp.git
+  DT_PATH: device/lenovo/a6000
   TARGET: recoveryimage
   OT: omni_
   TZ: Europe/London
