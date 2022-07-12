@@ -15,9 +15,9 @@ on:
 
 env:
   MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-9.0
-  DEVICE: a6000
-  DT_LINK: https://github.com/sheikhsheikh41299/android_device_lenovo_a6000-pbrp.git
-  DT_PATH: device/lenovo/a6000
+  DEVICE: pd1510
+  DT_LINK: https://github.com/sheikhsheikh41299/android_device_vivo_pd1510-twrp.git
+  DT_PATH: device/vivo/pd1510
   TARGET: recoveryimage
   OT: omni_
   TZ: Europe/London
@@ -58,11 +58,11 @@ jobs:
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j110
               sudo apt install zip
-              zip pbrp.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/*.zip
+             
 
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/pbrp.zip
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/pd1510/*.zip
             retention-days: 5
