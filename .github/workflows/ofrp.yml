@@ -47,10 +47,10 @@ jobs:
        - name: Sync recovery source and device tree
          run: |
              sudo apt install git aria2 -y
-             mkdir ~/work
+             mkdir work
              cd work
              repo init --depth=1 -u https://gitlab.com/OrangeFox/Manifest.git -b fox_8.1
-             repo sync -j8 --force-sync
+             repo sync -j345 --force-sync
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH             
              
        - name: Build
