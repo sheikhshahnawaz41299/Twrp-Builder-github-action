@@ -16,7 +16,7 @@ on:
 env:
   MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni.git -b twrp-8.1
   DEVICE: pd1510
-  DT_LINK: https://github.com/sheikhsheikh41299/android_device_vivo_pd1510-twrp.git 
+  DT_LINK: https://github.com/sheikhshahnawaz41299/android_device_vivo_pd1510-twrp.git 
   DT_PATH: device/vivo/pd1510
   TARGET: recoveryimage
   OT: omni_
@@ -56,10 +56,10 @@ jobs:
          run: |
               cd work
               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka $TARGET -j100
-              sudo apt install zip && zip twrp.zip /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/recovery.img
+                /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/recovery.img
        - name: Save
          uses: actions/upload-artifact@v3
          with:
             name: recovery.zip
-            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/twrp.zip
+            path: /home/runner/work/Twrp-Builder-github-action/Twrp-Builder-github-action/work/out/target/product/$DEVICE/recovery.img
             retention-days: 5
