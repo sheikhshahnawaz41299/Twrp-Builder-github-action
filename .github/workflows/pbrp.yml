@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-8.1
+  MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-9.0
   DEVICE: pd1510
   DT_LINK: https://github.com/sheikhshahnawaz41299/android_device_vivo_pd1510-pbrp.git
   DT_PATH: device/vivo/pd1510
